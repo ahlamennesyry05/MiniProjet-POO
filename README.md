@@ -33,3 +33,14 @@ Le système utilise la programmation orientée objet avec :
 ## Auteur
 
 Projet réalisé dans le cadre d'un mini-projet en programmation orientée objet.
+## Exemple d'exécution
+
+Alice envoie : Bonjour tout le monde !
+Bob 😐 reçoit : Bonjour tout le monde !
+Clara 😠 reçoit : Bonjour tout le monde !
+Alice 😊 reçoit : Bonjour tout le monde !
+
+Cet exemple montre que le message se propage dans le réseau et que la boucle infinie est évitée.
+## Capture d'écran
+<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/88d8122b-84c9-4505-a5fe-d15ec39874da" />
+
