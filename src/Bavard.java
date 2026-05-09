@@ -5,10 +5,13 @@ public class Bavard implements MessageListener {
 
     private String nom;
     private List<Bavard> amis;
+    private List<Integer> messagesRecus;
 
     public Bavard(String nom) {
+       
         this.nom = nom;
         this.amis = new ArrayList<>();
+        this.messagesRecus = new ArrayList<>();
     }
 
     public void ajouterAmi(Bavard b) {
