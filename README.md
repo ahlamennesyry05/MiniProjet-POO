@@ -17,6 +17,7 @@ Le système utilise la programmation orientée objet avec :
 - Transmission du message dans le réseau
 - Évitement des boucles infinies grâce à un identifiant unique
 - Personnalité des bavards (positif, négatif, neutre)
+- Modification du message selon la personnalité (bienveillance)
 
 ## Structure du projet
 
@@ -42,5 +43,4 @@ Alice 😊 reçoit : Bonjour tout le monde !
 
 Cet exemple montre que le message se propage dans le réseau et que la boucle infinie est évitée.
 ## Capture d'écran
-<img width="1919" height="944" alt="image" src="https://github.com/user-attachments/assets/88d8122b-84c9-4505-a5fe-d15ec39874da" />
-
+<img width="1919" height="956" alt="image" src="https://github.com/user-attachments/assets/368bcc0b-c500-4a81-ada4-bd9c3072f055" />
