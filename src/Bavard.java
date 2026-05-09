@@ -27,8 +27,19 @@ public class Bavard implements MessageListener {
             ami.recevoirMessage(event);
         }
     }
-
     public void recevoirMessage(MessageEvent event) {
-        System.out.println(nom + " reçoit : " + event.getMessage());
+    if (messagesRecus.contains(event.getId())) {
+        return;
     }
+
+    messagesRecus.add(event.getId());
+    System.out.println(nom + " reçoit : " + event.getMessage());
+    for (Bavard ami : amis) {
+        ami.recevoirMessage(event);
+   }
+    
+ 
+   }
+
+
 }
