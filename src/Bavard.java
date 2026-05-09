@@ -36,14 +36,25 @@ public class Bavard implements MessageListener {
 
         messagesRecus.add(event.getId());
 
+       
         if (personnalite.equals("positif")) {
-            System.out.println(nom + " 😊 reçoit : " + event.getMessage());
-        } else if (personnalite.equals("negatif")) {
-            System.out.println(nom + " 😠 reçoit : " + event.getMessage());
-        } else {
-            System.out.println(nom + " 😐 reçoit : " + event.getMessage());
+            event.setBienveillance(event.getBienveillance() + 1);
+            System.out.println(nom + " modifie la bienveillance à : " + event.getBienveillance());
+            System.out.println(nom + " 😊 reçoit : " + event.getMessage()
+                    + " (bienveillance : " + event.getBienveillance() + ")");
+        } 
+        else if (personnalite.equals("negatif")) {
+            event.setBienveillance(event.getBienveillance() - 1);
+            System.out.println(nom + " modifie la bienveillance à : " + event.getBienveillance());
+            System.out.println(nom + " 😠 reçoit : " + event.getMessage()
+                    + " (bienveillance : " + event.getBienveillance() + ")");
+        } 
+        else {
+            System.out.println(nom + " 😐 reçoit : " + event.getMessage()
+                    + " (bienveillance : " + event.getBienveillance() + ")");
         }
 
+       
         for (Bavard ami : amis) {
             ami.recevoirMessage(event);
         }
