@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bavard {
+public class Bavard implements MessageListener {
 
     private String nom;
     private List<Bavard> amis;
@@ -16,13 +16,16 @@ public class Bavard {
     }
 
     public void envoyerMessage(String message) {
+        MessageEvent event = new MessageEvent(message, this);
+
         System.out.println(nom + " envoie : " + message);
+
         for (Bavard ami : amis) {
-            ami.recevoirMessage(message);
+            ami.recevoirMessage(event);
         }
     }
 
-    public void recevoirMessage(String message) {
-        System.out.println(nom + " reçoit : " + message);
+    public void recevoirMessage(MessageEvent event) {
+        System.out.println(nom + " reçoit : " + event.getMessage());
     }
 }
