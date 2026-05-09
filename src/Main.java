@@ -11,4 +11,4 @@ public class Main {
 
         alice.envoyerMessage("Bonjour tout le monde !");
     }
-}
+}  
