@@ -13,4 +13,7 @@ public class MessageEvent {
         this.auteur = auteur;
 
     }
+    public int getId() {
+    return id;
+   }
 }
