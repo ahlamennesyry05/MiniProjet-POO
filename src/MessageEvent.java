@@ -1,5 +1,8 @@
+package projet;
 
-public class MessageEvent {
+import java.util.EventObject;
+
+public class MessageEvent extends EventObject {
 
     private static int compteurId = 0;
 
@@ -13,6 +16,8 @@ public class MessageEvent {
     private int profondeurMax;
 
     public MessageEvent(String message, Bavard auteur, int profondeurMax) {
+        super(auteur);
+
         this.id = compteurId;
         compteurId++;
 
@@ -23,6 +28,23 @@ public class MessageEvent {
         this.compteurTransmissions = 0;
         this.profondeur = 0;
         this.profondeurMax = profondeurMax;
+    }
+
+    private MessageEvent(MessageEvent original) {
+        super(original.auteur);
+
+        this.id = original.id;
+        this.message = original.message;
+        this.auteur = original.auteur;
+        this.bienveillance = original.bienveillance;
+        this.chemin = original.chemin;
+        this.compteurTransmissions = original.compteurTransmissions;
+        this.profondeur = original.profondeur;
+        this.profondeurMax = original.profondeurMax;
+    }
+
+    public MessageEvent copie() {
+        return new MessageEvent(this);
     }
 
     public int getId() {
