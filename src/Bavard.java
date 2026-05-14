@@ -1,4 +1,4 @@
-
+package projet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +31,9 @@ public class Bavard implements MessageListener {
         System.out.println(nom + " envoie : " + message);
 
         for (Bavard ami : amis) {
-            event.incrementerTransmission();
-            ami.recevoirMessage(event);
+            MessageEvent copie = event.copie();
+            copie.incrementerTransmission();
+            ami.recevoirMessage(copie);
         }
     }
 
@@ -62,8 +63,9 @@ public class Bavard implements MessageListener {
             event.augmenterProfondeur();
 
             for (Bavard ami : amis) {
-                event.incrementerTransmission();
-                ami.recevoirMessage(event);
+                MessageEvent copie = event.copie();
+                copie.incrementerTransmission();
+                ami.recevoirMessage(copie);
             }
         }
     }
