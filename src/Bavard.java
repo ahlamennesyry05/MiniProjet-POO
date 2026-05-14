@@ -7,7 +7,7 @@ public class Bavard implements MessageListener {
 
     private String nom;
     private String personnalite;
-    private List<Bavard> amis;
+    private List<MessageListener> amis;
     private List<Integer> messagesRecus;
 
     public Bavard(String nom, String personnalite) {
@@ -21,7 +21,7 @@ public class Bavard implements MessageListener {
         return nom;
     }
 
-    public void ajouterAmi(Bavard b) {
+    public void ajouterAmi(MessageListener b) {
         amis.add(b);
     }
 
@@ -30,7 +30,7 @@ public class Bavard implements MessageListener {
 
         System.out.println(nom + " envoie : " + message);
 
-        for (Bavard ami : amis) {
+        for (MessageListener ami : amis) {
             MessageEvent copie = event.copie();
             copie.incrementerTransmission();
             ami.recevoirMessage(copie);
@@ -62,7 +62,7 @@ public class Bavard implements MessageListener {
         if (event.peutEncoreSePropager()) {
             event.augmenterProfondeur();
 
-            for (Bavard ami : amis) {
+            for (MessageListener ami : amis) {
                 MessageEvent copie = event.copie();
                 copie.incrementerTransmission();
                 ami.recevoirMessage(copie);
