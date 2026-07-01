@@ -82,4 +82,4 @@ Exemple de l’interface graphique du projet :
 
 ## Auteur
 
-Projet réalisé dans le cadre d’un mini-projet en programmation orientée objet.
+Ahlam Ennesyry — Étudiante en école d'ingénieurs
